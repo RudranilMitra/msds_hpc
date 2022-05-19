@@ -1,0 +1,13 @@
+spack:
+  config:
+    install_missing_compilers: true
+  view: true
+  definitions:
+  - compilers: [gcc@10.3.0, gcc@11.2.0]
+  - packages: [openblas threads=openmp, python@3.10.4, py-numpy+blas+lapack, py-pandas@1.4.2, py-matplotlib@3.5.2]
+  - targets: [target=linux-centos7-x86_64]
+  specs:
+  - matrix:
+    - [$%compilers]
+    - [$packages]
+    - [$targets]
